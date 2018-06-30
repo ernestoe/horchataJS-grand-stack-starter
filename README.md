@@ -31,7 +31,12 @@ cd ./ui && npm start
 
 *Start dockerized DB server*
 
-After building (see neo4j/README.md)
+Build Neo4j from docker image:
+```
+docker-compose build
+```
+
+After building run the image
 
 ```
 docker-compose up
