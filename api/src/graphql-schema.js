@@ -7,7 +7,7 @@ type User {
   friends(first: Int = 10, offset: Int = 0): [User] @relation(name: "FRIENDS", direction: "BOTH")
   reviews(first: Int = 10, offset: Int = 0): [Review] @relation(name: "WROTE", direction: "OUT")
   avgStars: Float @cypher(statement: "MATCH (this)-[:WROTE]->(r:Review) RETURN toFloat(avg(r.stars))")
-  # friendsCount: Int @cypher(statement: "MATCH (this)-[:FRIENDS]-(f) RETURN count(DISTINCT f)")
+  friendsCount: Int @cypher(statement: "MATCH (this)-[:FRIENDS]-(f) RETURN count(DISTINCT f)")
 }
 
 type Business {
